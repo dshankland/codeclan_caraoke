@@ -9,4 +9,8 @@ class Guest
     @favourite_song = favourite_song
   end
 
+  def pays(amount)
+    @money -= amount
+  end
+  
 end
