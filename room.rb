@@ -18,7 +18,7 @@ class Room
       @guestlist << guest
       @till += @entry_fee
       if @songlist.include?(guest.favourite_song)
-        guest.exclaims
+        guest.exclaims(:check_in)
       end
     end
   end
@@ -31,7 +31,7 @@ class Room
     @songlist.push(song)
     for guest in @guestlist
       if guest.favourite_song == song
-        guest.exclaims()
+        guest.exclaims(:add_song)
       end
     end
   end

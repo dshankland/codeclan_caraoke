@@ -13,8 +13,16 @@ class Guest
     @money -= amount
   end
 
-  def exclaims()
-    p "#{name}: Ya dancer! I love #{favourite_song.title}!"
+  def exclaims(context)
+    case context
+    when :add_song
+      context_string = " (as it is added to the room playlist)"
+    when :check_in
+      context_string = " (as they check in to the room)"
+    else
+      context_string = " testing for other conditions!"
+    end
+    p "#{name} says: Ya dancer! I love #{favourite_song.title}!" + context_string
   end
 
 end

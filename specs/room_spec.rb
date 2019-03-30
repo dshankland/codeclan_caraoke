@@ -62,16 +62,12 @@ class RoomTest < MiniTest::Test
   end
 
   def test_add_song_check_favourite()
-    p "Add song check"
-    # binding.pry
     @room2.check_in(@guest1)
     @room2.check_in(@guest2)
     @room2.check_in(@guest3)
     @room2.check_in(@guest4)
     @room2.check_in(@guest5)
-    p "Adding song"
     @room2.add_song(@song4)
-    p "Added song"
   end
 
 end
