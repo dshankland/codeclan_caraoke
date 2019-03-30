@@ -33,11 +33,11 @@ class GuestTest < MiniTest::Test
   end
 
   def test_guest_exclaims()
-    assert_equal("Ya dancer!", @guest1.exclaims())
+    assert_equal("Darren says: Ya dancer! I love Ooh La La! (as they check in to the room)", @guest1.exclaims(:check_in))
   end
 
   def test_sings_song()
-    
+    assert_equal("Darren sings Sympathy for the Devil", @guest1.sings(@song3))
   end
 
 end
