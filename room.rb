@@ -13,7 +13,7 @@ class Room
   end
 
   def check_in(guest)
-    if @guestlist.count() < @capacity
+    if @guestlist.count() < @capacity && guest.money >= @entry_fee
       guest.pays(@entry_fee)
       @guestlist << guest
       @till += @entry_fee

@@ -19,6 +19,8 @@ class RoomTest < MiniTest::Test
     @guest4 = Guest.new("Bob", 20, @song4)
     @guest5 = Guest.new("Norman", 2, nil)
     @guest6 = Guest.new("Fred", 3, nil)
+    @guest7 = Guest.new("Jim", 25, @song4)
+    @guest8 = Guest.new("James", 35, @song2)
     @room1 = Room.new("Oldies", @songlist1, 6)
     @room2 = Room.new("One Song", @songlist2, 3)
   end
@@ -56,9 +58,19 @@ class RoomTest < MiniTest::Test
     @room1.check_in(@guest2)
     @room1.check_in(@guest3)
     @room1.check_in(@guest4)
+    @room1.check_in(@guest7)
+    @room1.check_in(@guest8)
+    assert_equal(5, @room1.guestlist.count)
+  end
+
+  def test_check_sufficient_funds_on_check_in()
+    @room1.check_in(@guest1)
+    @room1.check_in(@guest2)
+    @room1.check_in(@guest3)
+    @room1.check_in(@guest4)
     @room1.check_in(@guest5)
     @room1.check_in(@guest6)
-    assert_equal(5, @room1.guestlist.count)
+    assert_equal(4, @room1.guestlist.count)
   end
 
   def test_add_song_check_favourite()
