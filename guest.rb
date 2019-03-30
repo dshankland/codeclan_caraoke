@@ -25,8 +25,8 @@ class Guest
     p "#{name} says: Ya dancer! I love #{favourite_song.title}!" + context_string
   end
 
-def sings(song)
-  p "#{@name} sings #{song.title}"
-end
+  def sings(song)
+    p "#{@name} sings #{song.title}"
+  end
 
 end

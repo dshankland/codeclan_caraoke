@@ -7,10 +7,10 @@ require_relative('../song')
 
 class RoomTest < MiniTest::Test
   def setup()
-    @song1 = Song.new("Ooh La La")
-    @song2 = Song.new("Gimme Shelter")
-    @song3 = Song.new("Sympathy for the Devil")
-    @song4 = Song.new("Oh! Sweet Nuthin'")
+    @song1 = Song.new("Faces", "Ooh La La")
+    @song2 = Song.new("The Rolling Stones", "Gimme Shelter")
+    @song3 = Song.new("The Rolling Stones", "Sympathy for the Devil")
+    @song4 = Song.new("The Velvet Underground", "Oh! Sweet Nuthin'")
     @songlist1 = [@song1, @song2, @song3]
     @songlist2 = [@song1]
     @guest1 = Guest.new("Darren", 50, @song1)
