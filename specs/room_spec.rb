@@ -82,4 +82,17 @@ class RoomTest < MiniTest::Test
     @room2.add_song(@song4)
   end
 
+  def test_plays_next_song()
+    @room1.plays_next_song()
+    assert_equal("Karaoke room Oldies plays Gimme Shelter by The Rolling Stones", @room1.plays_next_song())
+    assert_equal(1, @room1.songlist.count())
+  end
+
+  def test_plays_next_song_no_more_songs()
+    @room1.plays_next_song()
+    @room1.plays_next_song()
+    @room1.plays_next_song()
+    assert_equal("No more songs :(", @room1.plays_next_song())
+  end
+
 end

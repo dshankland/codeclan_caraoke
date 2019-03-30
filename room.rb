@@ -36,4 +36,13 @@ class Room
     end
   end
 
+  def plays_next_song()
+    next_song = @songlist.shift()
+    if next_song != nil
+      p "Karaoke room #{@name} plays #{next_song.title} by #{next_song.artist}"
+    else
+      p "No more songs :("
+    end
+  end
+
 end
