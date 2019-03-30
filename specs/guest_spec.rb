@@ -2,12 +2,23 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../song')
 require_relative('../guest')
+require_relative('../room')
 
 class GuestTest < MiniTest::Test
 
   def setup()
     @song1 = Song.new("Ooh La La")
+    @song2 = Song.new("Gimme Shelter")
+    @song3 = Song.new("Sympathy for the Devil")
+    @song4 = Song.new("Oh! Sweet Nuthin'")
+    @songlist1 = [@song1, @song2, @song3]
     @guest1 = Guest.new("Darren", 50, @song1)
+    @guest2 = Guest.new("Dazza", 40, @song2)
+    @guest3 = Guest.new("Dave", 60, @song3)
+    @guest4 = Guest.new("Bob", 20, @song4)
+    @guest5 = Guest.new("Norman", 2, nil)
+    @guest6 = Guest.new("Fred", 3, nil)
+    @room1 = Room.new("Oldies", @songlist1, 6)
   end
 
   def test_guest_info()
@@ -21,5 +32,12 @@ class GuestTest < MiniTest::Test
     assert_equal(44, @guest1.money)
   end
 
+  def test_guest_exclaims()
+    assert_equal("Ya dancer!", @guest1.exclaims())
+  end
+
+  def test_sings_song()
+    
+  end
 
 end

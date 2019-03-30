@@ -13,13 +13,27 @@ class Room
   end
 
   def check_in(guest)
-    guest.pays(@entry_fee)
-    @guestlist << guest
-    @till += @entry_fee
+    if @guestlist.count() < @capacity
+      guest.pays(@entry_fee)
+      @guestlist << guest
+      @till += @entry_fee
+      if @songlist.include?(guest.favourite_song)
+        guest.exclaims
+      end
+    end
   end
 
   def check_out(guest)
     @guestlist.delete(guest)
+  end
+
+  def add_song(song)
+    @songlist.push(song)
+    for guest in @guestlist
+      if guest.favourite_song == song
+        guest.exclaims()
+      end
+    end
   end
 
 end

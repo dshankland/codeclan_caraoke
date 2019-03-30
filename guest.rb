@@ -12,5 +12,9 @@ class Guest
   def pays(amount)
     @money -= amount
   end
-  
+
+  def exclaims()
+    p "#{name}: Ya dancer! I love #{favourite_song.title}!"
+  end
+
 end
