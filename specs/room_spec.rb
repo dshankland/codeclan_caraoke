@@ -41,7 +41,6 @@ class RoomTest < MiniTest::Test
   end
 
   def test_guest_check_out()
-    p "Check in check"
     @room1.check_in(@guest1)
     @room1.check_in(@guest2)
     @room1.check_out(@guest1)
